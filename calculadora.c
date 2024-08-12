@@ -19,3 +19,7 @@ double divisao(double a, double b) {
         return 0;
     }
 }
+
+double calcularJurosSimples(double capital, double taxa, int tempo) {
+    return capital * taxa * tempo;
+}
