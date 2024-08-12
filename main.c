@@ -14,7 +14,8 @@ void menuPrincipal() {
         printf("2. Subtração\n");
         printf("3. Multiplicação\n");
         printf("4. Divisão\n");
-        printf("5. Sair\n");
+        printf("5. Calcular Juros Simples\n");
+        printf("6. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
 
@@ -39,7 +40,12 @@ void menuPrincipal() {
                 scanf("%lf %lf", &a, &b);
                 printf("Resultado: %.2lf\n", divisao(a, b));
                 break;
-            case 5:
+           case 5:
+                printf("Digite o capital, taxa e tempo: ");
+                scanf("%lf %lf %d", &capital, &taxa, &tempo);
+                printf("Juros Simples: %.2lf\n", calcularJurosSimples(capital, taxa, tempo));
+                break;
+            case 6:
                 printf("Saindo...\n");
                 return;
             default:
