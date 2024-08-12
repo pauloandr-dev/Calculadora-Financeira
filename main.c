@@ -15,11 +15,14 @@ void menuPrincipal() {
         printf("3. Multiplicação\n");
         printf("4. Divisão\n");
         printf("5. Calcular Juros Simples\n");
-        printf("6. Sair\n");
+        printf("6. Calcular Juros Compostos\n");
+        printf("7. Converter Taxa\n");
+        printf("8. Simular Investimento\n");
+        printf("9. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
 
-     switch(opcao) {
+        switch(opcao) {
             case 1:
                 printf("Digite os dois números: ");
                 scanf("%lf %lf", &a, &b);
@@ -40,12 +43,27 @@ void menuPrincipal() {
                 scanf("%lf %lf", &a, &b);
                 printf("Resultado: %.2lf\n", divisao(a, b));
                 break;
-           case 5:
+            case 5:
                 printf("Digite o capital, taxa e tempo: ");
                 scanf("%lf %lf %d", &capital, &taxa, &tempo);
                 printf("Juros Simples: %.2lf\n", calcularJurosSimples(capital, taxa, tempo));
                 break;
             case 6:
+                printf("Digite o capital, taxa e tempo: ");
+                scanf("%lf %lf %d", &capital, &taxa, &tempo);
+                printf("Juros Compostos: %.2lf\n", calcularJurosCompostos(capital, taxa, tempo));
+                break;
+            case 7:
+                printf("Digite a taxa e o número de períodos: ");
+                scanf("%lf %d", &taxa, &tempo);
+                printf("Taxa Convertida: %.2lf\n", converterTaxa(taxa, tempo));
+                break;
+            case 8:
+                printf("Digite o capital, taxa e tempo: ");
+                scanf("%lf %lf %d", &capital, &taxa, &tempo);
+                printf("Valor Futuro: %.2lf\n", simularInvestimento(capital, taxa, tempo));
+                break;
+            case 9:
                 printf("Saindo...\n");
                 return;
             default:
